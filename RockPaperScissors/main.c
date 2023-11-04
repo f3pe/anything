@@ -37,6 +37,10 @@ void rules(){
     printf("Use 1 for rock\n");
     printf("Use 2 for paper\n");
     printf("Use 3 for scissors\n\n");
+    printf("press enter to continue");
+    int c = getchar();
+    c = getchar();
+    system("clear");
     main();
 }
 
