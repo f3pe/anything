@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        String continuar = "s";
+        Scanner ler = new Scanner(System.in);
+            do{
+            Calculadora calc = new Calculadora();
+            System.out.println("Digite um número: ");
+            double n1 = ler.nextDouble();
+            System.out.println("Digite o segundo número: ");
+            double n2 = ler.nextDouble();
+            System.out.println("Selecione a operação: \n[1] - Soma\n[2] - subtração\n[3] - Multiplicação\n[4] - Divisão\n");
+            int op = ler.nextInt();
+            double resultado;
+            switch(op){
+                case 1:
+                    resultado = calc.somar(n1, n2);
+                    break;
+                case 2:
+                    resultado = calc.subtrair(n1, n2);
+                    break;
+                case 3:
+                    resultado = calc.multiplicar(n1, n2);
+                    break;
+                case 4:
+                    resultado = calc.dividir(n1, n2);
+                    break;
+                default:
+                    System.out.println("Insira uma operação valida por favor.");
+                    continue;
+            }
+            System.out.print("O resultado da operação é: " + resultado + "\n");
+            System.out.print("Deseja fazer outra operação? [S/N]\n");
+            ler.nextLine();
+            continuar = ler.nextLine();
+        }while(continuar.equals("s") || continuar.equals("S"));
+        ler.close();
+    }
+}
